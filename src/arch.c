@@ -33,6 +33,8 @@
 #include "arch-x86.h"
 #include "arch-x86_64.h"
 #include "arch-x32.h"
+#include "arch-arcompact.h"
+#include "arch-arcv2.h"
 #include "arch-arm.h"
 #include "arch-aarch64.h"
 #include "arch-mips.h"
@@ -59,6 +61,10 @@ const struct arch_def *arch_def_native = &arch_def_x32;
 #else
 const struct arch_def *arch_def_native = &arch_def_x86_64;
 #endif /* __ILP32__ */
+#elif __ARC700__
+const struct arch_def *arch_def_native = &arch_def_arcompact;
+#elif __ARCHS__
+const struct arch_def *arch_def_native = &arch_def_arcv2;
 #elif __arm__
 const struct arch_def *arch_def_native = &arch_def_arm;
 #elif __aarch64__
@@ -137,6 +143,10 @@ const struct arch_def *arch_def_lookup(uint32_t token)
 		return &arch_def_x86_64;
 	case SCMP_ARCH_X32:
 		return &arch_def_x32;
+	case SCMP_ARCH_ARCOMPACT:
+		return &arch_def_arcompact;
+	case SCMP_ARCH_ARCV2:
+		return &arch_def_arcv2;
 	case SCMP_ARCH_ARM:
 		return &arch_def_arm;
 	case SCMP_ARCH_AARCH64:

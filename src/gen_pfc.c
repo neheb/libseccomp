@@ -57,6 +57,10 @@ static const char *_pfc_arch(const struct arch_def *arch)
 		return "x86_64";
 	case SCMP_ARCH_X32:
 		return "x32";
+	case SCMP_ARCH_ARCOMPACT:
+		return "arcompact";
+	case SCMP_ARCH_ARCV2:
+		return "arcv2";
 	case SCMP_ARCH_ARM:
 		return "arm";
 	case SCMP_ARCH_AARCH64:

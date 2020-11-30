@@ -40,6 +40,10 @@
 #else
 #define ARCH_NATIVE		AUDIT_ARCH_X86_64
 #endif /* __ILP32__ */
+#elif __ARC700__
+#define ARCH_NATIVE		AUDIT_ARCH_ARCOMPACT
+#elif __ARCHS__
+#define ARCH_NATIVE		AUDIT_ARCH_ARCV2
 #elif __arm__
 #define ARCH_NATIVE		AUDIT_ARCH_ARM
 #elif __aarch64__

@@ -223,6 +223,12 @@ struct scmp_arg_cmp {
 #define SCMP_ARCH_SH		AUDIT_ARCH_SHEL /* Little-endian SH is more common than big */
 
 /**
+ * The Synopsis ARC architecture tokens
+ */
+#define SCMP_ARCH_ARCOMPACT	AUDIT_ARCH_ARCOMPACT
+#define SCMP_ARCH_ARCV2		AUDIT_ARCH_ARCV2
+
+/**
  * Convert a syscall name into the associated syscall number
  * @param x the syscall name
  */
